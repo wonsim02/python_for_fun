@@ -1,0 +1,3 @@
+init,C-r,C-s,C-f,C-q,C-etc,V-h,V-n,V-m,V-etc,CC-r,CC-s,CC-f,CC-q,CV-h,CV-n,CV-m,CV-etc,V2-h,V2-n,V2-m,CV-hC-r,CV-hC-s,CV-hC-f,CV-hC-q,CV-hC-etc,CV-nC-r,CV-nC-s,CV-nC-f,CV-nC-q,CV-nC-etc,CV-mC-r,CV-mC-s,CV-mC-f,CV-mC-q,CV-mC-etc,CV-etcC-r,CV-etcC-s,CV-etcC-f,CV-etcC-q,CV-etcC-etc,CV2-h,CV2-n,CV2-m,CV-hCC-r,CV-hCC-s,CV-hCC-f,CV-hCC-q,CV-nCC-r,CV-nCC-s,CV-nCC-f,CV-nCC-q,CV-mCC-r,CV-mCC-s,CV-mCC-f,CV-mCC-q,CV-etcCC-r,CV-etcCC-s,CV-etcCC-f,CV-etcCC-q,CV2-hC-r,CV2-hC-s,CV2-hC-f,CV2-hC-q,CV2-hC-etc,CV2-nC-r,CV2-nC-s,CV2-nC-f,CV2-nC-q,CV2-nC-etc,CV2-mC-r,CV2-mC-s,CV2-mC-f,CV2-mC-q,CV2-mC-etc,CV2-hCC-r,CV2-hCC-s,CV2-hCC-f,CV2-hCC-q,CV2-nCC-r,CV2-nCC-s,CV2-nCC-f,CV2-nCC-q,CV2-mCC-r,CV2-mCC-s,CV2-mCC-f,CV2-mCC-q
+init
+rRsSeEfFaAqQtTdDwWcCzZxXvVgGkKoiIOjJpuUPhHyYnNbBmMlL

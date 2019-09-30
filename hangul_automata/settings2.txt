@@ -1,0 +1,180 @@
+#0, init -> C
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#1, init -> V
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 0, 1, 0))
+
+#2, C -> C
+STRING.append(to_word(BUFFER, 1, 0, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#3, C -> CC
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 2, 0, 0))
+
+#4, C -> CV
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#5 V -> C
+STRING.append(to_word(BUFFER, 0, 1, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#6 V -> V
+STRING.append(to_word(BUFFER, 0, 1, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 0, 1, 0))
+
+#7 V -> VV
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 0, 2, 0))
+
+#8 CC -> C
+STRING.append(to_word(BUFFER, 2, 0, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#9 CC -> CV
+STRING.append(to_word(BUFFER[:1], 1, 0, 0))
+BUFFER.pop(0)
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#10 CV -> CVC
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 1))
+
+#11 CV -> V
+STRING.append(to_word(BUFFER, 1, 1, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 0, 1, 0))
+
+#12 CV -> CVV
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 2, 0))
+
+#13 VV -> C
+STRING.append(to_word(BUFFER, 0, 2, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#14 VV -> V
+STRING.append(to_word(BUFFER, 0, 2, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 0, 1, 0))
+
+#15 CVC -> C
+STRING.append(to_word(BUFFER, 1, 1, 1))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#16 CVC -> CVCC
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 2))
+
+#17 CVC -> CV
+STRING.append(to_word(BUFFER[:2], 1, 1, 0))
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#18 CVV -> CVVC
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 2, 1))
+
+#19 CVV -> V
+STRING.append(to_word(BUFFER, 1, 2, 0))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 0, 1, 0))
+
+#20 CVCC -> C
+STRING.append(to_word(BUFFER, 1, 1, 2))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#21 CVCC -> CV
+STRING.append(to_word(BUFFER[:3], 1, 1, 1))
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#22 CVVC -> C
+STRING.append(to_word(BUFFER, 1, 2, 1))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#23 CVVC -> CVVCC
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 2, 2))
+
+#24 CVVC -> CV
+STRING.append(to_word(BUFFER[:3], 1, 2, 0))
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#25 CVVCC -> C
+STRING.append(to_word(BUFFER, 1, 2, 2))
+BUFFER = []
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#26 CVVCC -> CV
+STRING.append(to_word(BUFFER[:4], 1, 2, 1))
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.pop(0)
+BUFFER.append(HAN[char])
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#27
+if not len(BUFFER) is 0:
+	BUFFER.pop()
+elif not len(STRING) is 0:
+	STRING.pop()
+display("".join(STRING))
+
+#28
+BUFFER.pop()
+display(to_string(STRING, BUFFER, 1, 0, 0))
+
+#29
+BUFFER.pop()
+display(to_string(STRING, BUFFER, 0, 1, 0))
+
+#30
+BUFFER.pop()
+display(to_string(STRING, BUFFER, 1, 1, 0))
+
+#31
+BUFFER.pop()
+display(to_string(STRING, BUFFER, 1, 1, 1))
+
+#32
+BUFFER.pop()
+display(to_string(STRING, BUFFER, 1, 2, 0))
+
+#33
+BUFFER.pop()
+display(to_string(STRING, BUFFER, 1, 2, 1))

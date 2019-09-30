@@ -1,0 +1,52 @@
+INI = {u'ㄱ': 0, u'ㄲ': 1, u'ㄴ': 2, u'ㄷ': 3, u'ㄸ': 4, u'ㄹ': 5, u'ㅁ': 6, u'ㅂ': 7, u'ㅃ': 8, u'ㅅ': 9, u'ㅆ': 10, u'ㅇ': 11, u'ㅈ': 12, u'ㅉ': 13, u'ㅊ': 14, u'ㅋ': 15, u'ㅌ': 16, u'ㅍ': 17, u'ㅎ': 18}
+MID = {u'ㅏ': 0, u'ㅐ': 1, u'ㅑ': 2, u'ㅒ': 3, u'ㅓ': 4, u'ㅔ': 5, u'ㅕ': 6, u'ㅖ': 7, u'ㅗ': 8, u'ㅘ': 9, u'ㅙ': 10, u'ㅚ': 11, u'ㅛ': 12, u'ㅜ': 13, u'ㅝ': 14, u'ㅞ': 15, u'ㅟ': 16, u'ㅠ': 17, u'ㅡ': 18, u'ㅢ': 19, u'ㅣ': 20}
+FIN = {'': 0, u'ㄱ': 1, u'ㄲ': 2, u'ㄳ': 3, u'ㄴ': 4, u'ㄵ': 5, u'ㄶ': 6, u'ㄷ': 7, u'ㄹ': 8, u'ㄺ': 9, u'ㄻ': 10, u'ㄼ': 11, u'ㄽ': 12, u'ㄾ': 13, u'ㄿ': 14, u'ㅀ': 15, u'ㅁ': 16, u'ㅂ': 17, u'ㅄ': 18, u'ㅅ': 19, u'ㅆ': 20, u'ㅇ': 21, u'ㅈ': 22, u'ㅊ': 23, u'ㅋ': 24, u'ㅌ': 25, u'ㅍ': 26, u'ㅎ': 27}
+HAN = {'r': u'ㄱ', 'R': u'ㄲ', 's': u'ㄴ', 'S': u'ㄴ', 'e': u'ㄷ', 'E': u'ㄸ', 'f': u'ㄹ', 'F': u'ㄹ', 'a': u'ㅁ', 'A': u'ㅁ', 'q': u'ㅂ', 'Q': u'ㅃ', 't': u'ㅅ', 'T': u'ㅆ', 'd': u'ㅇ', 'D': u'ㅇ', 'w': u'ㅈ', 'W': u'ㅉ', 'c': u'ㅊ', 'C': u'ㅊ', 'z': u'ㅋ', 'Z': u'ㅋ', 'x': u'ㅌ', 'X': u'ㅌ', 'v': u'ㅍ', 'V': u'ㅍ', 'g': u'ㅎ', 'G': u'ㅎ',
+       'k': u'ㅏ', 'K': u'ㅏ', 'o': u'ㅐ', 'i': u'ㅑ', 'I': u'ㅑ', 'O': u'ㅒ', 'j': u'ㅓ', 'J': u'ㅓ', 'p': u'ㅔ', 'u': u'ㅕ', 'U': u'ㅕ', 'P': u'ㅖ', 'h': u'ㅗ', 'H': u'ㅗ', 'y': u'ㅛ', 'Y': u'ㅛ', 'n': u'ㅜ', 'N': u'ㅜ', 'b': u'ㅠ', 'B': u'ㅠ', 'm': u'ㅡ', 'M': u'ㅡ', 'l': u'ㅣ', 'L': u'ㅣ'}
+
+DOUBLE_JA = {u'ㄱ': {u'ㅅ': u'ㄳ'}, u'ㄴ': {u'ㅈ': u'ㄵ', u'ㅎ': u'ㄶ'}, u'ㄹ': {u'ㄱ': u'ㄺ', u'ㅁ': u'ㄻ', u'ㅂ': u'ㄼ', u'ㅅ': u'ㄽ', u'ㅌ': u'ㄾ', u'ㅍ': u'ㄿ', u'ㅎ': u'ㅀ'}, u'ㅂ': {u'ㅅ': u'ㅄ'}}
+DOUBLE_MO = {u'ㅗ': {u'ㅏ': u'ㅘ', u'ㅐ': u'ㅙ', u'ㅣ': u'ㅚ'}, u'ㅜ': {u'ㅓ': u'ㅝ', u'ㅔ': u'ㅞ', u'ㅣ': u'ㅟ'}, u'ㅡ': {u'ㅣ': u'ㅢ'}}
+
+MODE = 1
+
+STRING = []
+BUFFER = []
+display("")
+
+def to_unicode (i, m, f):
+    return chr((INI[i]*len(MID)+MID[m])*len(FIN)+FIN[f]+0xac00)
+    
+def to_word (buf, ini, mid, fin, mod = 0):
+    if ini is 0:
+        if mid is 1:
+            return buf[0]
+        else:
+            return DOUBLE_MO[buf[0]][buf[1]]
+    elif mid is 0:
+        if ini is 1:
+            return buf[0]
+        else:
+            return DOUBLE_JA[buf[0]][buf[1]]
+    
+    if mid is 1:
+        m = buf[1]
+    else:
+        m = DOUBLE_MO[buf[1]][buf[2]]
+    
+    if fin is 0:
+        return to_unicode(buf[0], m, '')
+    elif mod is 0:
+        if fin is 1:
+            f = buf[1+mid]
+        else:
+            f = DOUBLE_JA[buf[1+mid]][buf[2+mid]]
+        return to_unicode(buf[0], m, f)
+    else:
+        if fin is 1:
+            f = ''
+        else:
+            f = buf[1+mid]
+        return to_unicode(buf[0], m, f)+buf[len(buf)-1]
+
+def to_string (s, buf, ini, mid, fin):
+    return "".join(s)+to_word(buf, ini, mid, fin, MODE)
